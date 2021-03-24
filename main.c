@@ -7,6 +7,11 @@ Function to convert an integer to a string
 
 void Integer_To_String(uint32_t integer, char* pBuffer)
 {
+    if (integer == 0)
+    {
+        pBuffer[0] = '0';
+        return;
+    }
     uint32_t copyOfInt = integer;
     uint8_t noOfDigits = 0;
 
@@ -27,7 +32,7 @@ void Integer_To_String(uint32_t integer, char* pBuffer)
 int main()
 {
     static char buffer[15];
-    Integer_To_String(9825,buffer);
+    Integer_To_String(1908,buffer);
     printf("%s\n",buffer);
     return 0;
 }
